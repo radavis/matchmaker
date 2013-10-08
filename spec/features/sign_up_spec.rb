@@ -1,6 +1,11 @@
 require 'spec_helper'
 
-feature 'sign up' do
+feature 'sign up', %{
+  As a developer
+  I want to sign up
+  So that I can make job search more efficient
+  } do
+
   # ACCEPTANCE CRITERIA
   # * I must specify a valid email address
   # * I must specify a password, and confirm that password
