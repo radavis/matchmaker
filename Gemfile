@@ -46,7 +46,7 @@ end
 gem 'devise'
 #gem 'kaminari'
 #gem 'ransack'
-#gem 'simple_form'
+gem 'simple_form'
 #gem 'state_machine'
 #gem 'stringex'
 
