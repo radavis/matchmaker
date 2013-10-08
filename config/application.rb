@@ -13,6 +13,9 @@ Bundler.require(:default, Rails.env)
 
 module Matchmaker
   class Application < Rails::Application
+    # Devise config for Rails 3.2 deployed on Heroku, uncomment if needed
+    # config.assets.initialize_on_precompile = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
