@@ -17,6 +17,7 @@ feature 'create company profile', %q{
     previous_count = Company.count
 
     user = FactoryGirl.create(:user)
+    industry = FactoryGirl.create(:industry)
     sign_in_as(user)
 
     click_on 'Add a Company'
@@ -26,7 +27,7 @@ feature 'create company profile', %q{
     fill_in 'State', with: 'CA'
     fill_in 'Description', with: 'Some California company'
     check 'Telecommute'
-    select 'Defense Systems', from: 'Industry'
+    select industry.name, from: 'Industry'
     select 'Large', from: 'Size'  # startup, mid-sized, international conglomerate
     fill_in 'Year founded', with: 2013
     click_on 'Submit'

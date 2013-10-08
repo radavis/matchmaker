@@ -6,7 +6,7 @@
 <%= f.input :state %>
 <%= f.input :description %>
 <%= f.input :telecommute %>
-<%= f.input :industry %>
+ <%= f.association :industry, label_method: :name, value_method: :id, include_blank: true%>
 <%= f.input :size %>
 <%= f.input :year_founded %>
 

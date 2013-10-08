@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to root_path, notice: "Your company information was recorded"
     else
-      redirect_to :new
+      render action: "new"
     end
   end
 

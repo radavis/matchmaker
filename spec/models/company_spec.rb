@@ -19,9 +19,6 @@ describe Company do
   it { should have_valid(:telecommute).when(true, false) }
   it { should_not have_valid(:telecommute).when(nil, '') }
 
-  it { should have_valid(:industry).when('Defense', 'Education') }
-  it { should_not have_valid(:industry).when(nil, '') }
-
   it { should have_valid(:size).when('Startup', 'Megacorp') }
   it { should_not have_valid(:size).when(nil, '') }
 

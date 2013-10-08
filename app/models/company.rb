@@ -1,4 +1,7 @@
 class Company < ActiveRecord::Base
+  belongs_to :industry,
+    inverse_of: :companies
+
   validates_presence_of :name
 
   validates_presence_of :email
@@ -11,7 +14,7 @@ class Company < ActiveRecord::Base
   validates_length_of :description, minimum: 10
 
   validates_inclusion_of :telecommute, in: [true, false]
-  validates_presence_of :industry
+
   validates_presence_of :size
   validates_numericality_of :year_founded
 
