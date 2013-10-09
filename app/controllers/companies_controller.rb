@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   def new
     @company = Company.new
+
   end
 
   def create
@@ -12,6 +13,13 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def show
+    @company = Company.find(params[:id])
+    @skillable = @company
+    @skills = @skillable.skills
+    @skill = Skill.new
+  end
+
   def index
   end
 
@@ -19,6 +27,6 @@ class CompaniesController < ApplicationController
   def company_params
     params.require(:company).permit(:name, :email, :city,
       :state, :description, :telecommute, :industry_id, :size,
-      :year_founded)
+      :year_founded, :skill_name, :skillable_id, :skillable_type)
   end
 end

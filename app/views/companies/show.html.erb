@@ -1,0 +1,49 @@
+<p>
+  <strong>Name</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Email</strong>
+  <%= @company.email %>
+</p>
+
+<p>
+  <strong>City</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>State</strong>
+  <%= @company.state %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Telecommute</strong>
+  <%= @company.telecommute%>
+</p>
+
+<p>
+  <strong>Size</strong>
+  <%= @company.size %>
+</p>
+
+<p>
+  <strong>Year Founded</strong>
+  <%= @company.year_founded %>
+</p>
+
+<p>
+  <strong>Industry</strong>
+  <%= Industry.find(@company.industry_id).name %>
+</p>
+
+<%= simple_form_for [@company, @skill] do |f| %>
+  <%= f.input :skill_name %>
+  <%= f.submit "Add skills" %>
+<% end %>

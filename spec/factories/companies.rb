@@ -3,12 +3,12 @@
 FactoryGirl.define do
   factory :company do
     name "MyString"
-    email "MyString"
+    email "lindsay@awesome.com"
     city "MyString"
     state "MyString"
-    description "MyText"
+    description "MyText is da bomb"
     telecommute false
-    industry "MyString"
+    industry
     size "MyString"
     year_founded 1
   end
