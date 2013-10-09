@@ -1,7 +1,8 @@
 class Company < ActiveRecord::Base
   COMPANY_SIZES = ["Startup (1-25)", "Funded (25-100)", "Corporation (100+)", "Megloconglomocorp (1000+)"]
 
-  has_many :skills, as: :skillable
+  has_many :skills,as: :skillable,
+    inverse_of: :company
 
   belongs_to :industry,
     inverse_of: :companies

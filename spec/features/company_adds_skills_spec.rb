@@ -15,11 +15,10 @@ feature 'add skills to company', %q{
     prev_count = company.skills.count
     visit company_path(company)
 
-    save_and_open_page
-    fill_in 'Skill name', with: 'Ruby, Rails, SQL'
+    fill_in 'Skill name', with: 'Ruby'
     click_on 'Add skills'
 
     expect(page).to have_content("Your skills have been added to your profile successfully")
-    expect(company.skills.count).to eql(prev_count + 3)
+    expect(company.skills.count).to eql(prev_count + 1)
   end
 end
