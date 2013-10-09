@@ -4,22 +4,25 @@ module Seeders
   module Industries
 
     class << self
-      def seed
+
+      def industries
         industries = []
         CSV.foreach("#{Rails.root}/db/data/industries.csv", headers: false) do |row|
           industries << row[2]
         end
+        industries
+      end
 
-
-        industries.each do |industry|
+      def seed
+        Seeders::Industries.industries.each do |industry|
           entry = Industry.where(name: industry).first
           if entry.nil?
             entry = Industry.new
             entry.name = industry
           else
-            industry.update_attributes(name: entry)
+            entry.update_attributes(name: entry)
           end
-          entry.save
+          entry.save!
         end
       end
     end

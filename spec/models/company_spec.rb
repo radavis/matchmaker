@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe Company do
+
+  it { should belong_to(:industry) }
+
+  it { should have_valid(:industry) }
+
   it { should have_valid(:name).when('Umbrella Corporation', 'Launch Academy') }
   it { should_not have_valid(:name).when(nil, '') }
 
