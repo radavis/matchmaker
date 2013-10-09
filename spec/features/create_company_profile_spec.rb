@@ -28,7 +28,8 @@ feature 'create company profile', %q{
     fill_in 'Description', with: 'Some California company'
     check 'Telecommute'
     select industry.name, from: 'Industry'
-    select 'Large', from: 'Size'  # startup, mid-sized, international conglomerate
+    save_and_open_page
+    select 'Startup (1-25)', from: 'company_size'  # startup, mid-sized, international conglomerate
     fill_in 'Year founded', with: 2013
     click_on 'Submit'
 

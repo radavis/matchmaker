@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  COMPANY_SIZES = ["Startup (1-25)", "Funded (25-100)", "Corporation (100+)", "Megloconglomocorp (1000+)"]
+
   belongs_to :industry,
     inverse_of: :companies
 
@@ -15,7 +17,7 @@ class Company < ActiveRecord::Base
 
   validates_inclusion_of :telecommute, in: [true, false]
 
-  validates_presence_of :size
+  validates_presence_of :size, in: COMPANY_SIZES
   validates_numericality_of :year_founded
 
 end

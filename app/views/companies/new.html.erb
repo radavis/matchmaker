@@ -6,8 +6,8 @@
 <%= f.input :state %>
 <%= f.input :description %>
 <%= f.input :telecommute %>
- <%= f.association :industry, label_method: :name, value_method: :id, include_blank: true%>
-<%= f.input :size %>
+<%= f.association :industry, label_method: :name, value_method: :id, include_blank: true%>
+<%= f.select :size, company_sizes, {include_blank: 'Select Size'} %>
 <%= f.input :year_founded %>
 
 <%= f.submit 'Submit' %>
