@@ -62,6 +62,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 group :production do
