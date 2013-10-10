@@ -48,7 +48,3 @@
   <%= @company.skills.map(&:name).join(", ") %>
 </p>
 
-<%= simple_form_for @skill_tag do |f| %>
-  <%= f.association :skills, as: :check_boxes, collection: Skill.all %>
-  <%= f.submit "Add skills" %>
-<% end %>
