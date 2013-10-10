@@ -21,4 +21,21 @@ feature 'add skills to company', %q{
     expect(page).to have_content("Your skills have been added to your profile successfully")
     expect(company.skills.count).to eql(prev_count + 1)
   end
+
+  scenario 'only company unique skills can be added' do
+    company = FactoryGirl.create(:company)
+    prev_count = company.skills.count
+    visit company_path(company)
+
+    fill_in 'Skill name', with: 'Ruby'
+    click_on 'Add skills'
+
+    expect(page).to have_content("Your skills have been added to your profile successfully")
+
+    fill_in 'Skill name', with: 'Ruby'
+    click_on 'Add skills'
+
+    expect(company.skills.count).to eql(prev_count + 1)
+    expect(page).to have_content('Ruby')
+  end
 end

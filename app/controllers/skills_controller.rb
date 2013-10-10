@@ -11,7 +11,7 @@ class SkillsController < ApplicationController
 
   def create
 
-    @skill = @skillable.skills.new(skill_name: params[:skill][:skill_name])
+    @skill = @skillable.skills.find_or_create_by(skill_name: params[:skill][:skill_name])
     if @skill.save
       redirect_to @skillable, notice: "Your skills have been added to your profile successfully"
     else
