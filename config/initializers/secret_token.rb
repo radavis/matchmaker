@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Matchmaker::Application.config.secret_key_base = '86b47734ff3dc3180c454459237b8f6cd3c8fc3fdd10a18f3b74991cfa2ebfc36045028854217ae019b13f84d8385cd584801b81555a4d1a19ba1d6ad26b09cb'
+Matchmaker::Application.config.secret_key_base = ENV['SECRET_TOKEN']

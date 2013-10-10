@@ -14,4 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Exclude configuration that contains sensitive information.
 /config/database.yml
+/.env
