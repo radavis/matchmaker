@@ -30,4 +30,7 @@ describe Company do
   it { should have_valid(:year_founded).when(2013, 1984) }
   it { should_not have_valid(:year_founded).when(nil, '') }
 
+  it { should have_many :skill_tags }
+  it { should have_many :skills }
+
 end

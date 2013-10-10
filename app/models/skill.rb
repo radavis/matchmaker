@@ -1,6 +1,4 @@
 class Skill < ActiveRecord::Base
-  belongs_to :skillable, polymorphic: true
-
-  belongs_to :company,
-    inverse_of: :skills
+  has_many :skill_tags
+  has_many :companies, through: :skill_tags
 end

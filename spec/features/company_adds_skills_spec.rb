@@ -10,7 +10,7 @@ feature 'add skills to company', %q{
 
   # * I should be able to add multiple skills to my profile
 
-  scenario 'add a skill or more' do
+  pending 'add a skill or more' do
     company = FactoryGirl.create(:company)
     prev_count = company.skills.count
     visit company_path(company)
@@ -22,7 +22,26 @@ feature 'add skills to company', %q{
     expect(company.skills.count).to eql(prev_count + 1)
   end
 
-  scenario 'only company unique skills can be added' do
+  scenario 'add a skill or more' do
+    company = FactoryGirl.create(:company)
+    javascript = FactoryGirl.create(:skill, name: 'Javascript')
+    cpp = FactoryGirl.create(:skill, name: 'C++')
+    ruby = FactoryGirl.create(:skill, name: 'Ruby')
+
+    prev_count = company.skills.count
+    visit company_path(company)
+
+    check 'Ruby'
+    check 'Javascript'
+    click_on 'Add skills'
+
+    expect(page).to have_content("Your skills have been added to your profile successfully")
+    expect(company.skills).to include(ruby, javascript)
+    expect(company.skills).to_not include(cpp)
+    expect(company.skills.count).to eql(prev_count + 2)
+  end
+
+  pending 'only company unique skills can be added' do
     company = FactoryGirl.create(:company)
     prev_count = company.skills.count
     visit company_path(company)
