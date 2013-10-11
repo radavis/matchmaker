@@ -20,7 +20,7 @@ module Seeders
             entry = Industry.new
             entry.name = industry
           else
-            entry.update_attributes(name: entry)
+            entry.update_attributes(name: industry)
           end
           entry.save!
         end
