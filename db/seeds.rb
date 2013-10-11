@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Seeders::Industries.seed
-#Seeders::Companies.seed
+Seeders::Companies.seed

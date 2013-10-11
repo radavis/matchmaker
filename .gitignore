@@ -18,4 +18,4 @@
 # Exclude configuration that contains sensitive information.
 /config/database.yml
 /.env
-/db/data/companies.csv
+#/db/data/companies.csv
