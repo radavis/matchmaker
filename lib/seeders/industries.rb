@@ -15,15 +15,15 @@ module Seeders
 
       def seed
         Seeders::Industries.industries.each do |industry|
-          # entry = Industry.where(name: industry).first
-          # if entry.nil?
-          #   entry = Industry.new
-          #   entry.name = industry
-          # else
-          #   entry.update_attributes(name: entry)
-          # end
-          # entry.save!
-          Industry.create!(name: industry)
+
+          entry = Industry.where(name: industry).first
+          if entry.nil?
+            entry = Industry.new
+            entry.name = industry
+          else
+            entry.update_attributes(name: industry)
+          end
+          entry.save!
         end
       end
     end
