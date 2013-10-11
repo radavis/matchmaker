@@ -5,4 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-  Seeders::Industries.seed
+
+Seeders::Industries.seed
+Seeders::Companies.seed

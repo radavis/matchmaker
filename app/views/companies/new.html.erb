@@ -7,9 +7,9 @@
 <%= f.input :description %>
 <%= f.input :telecommute %>
 <%= f.association :industry, label_method: :name, value_method: :id, include_blank: true%>
-<%= f.select :size, company_sizes, {include_blank: 'Select Size'} %>
+<%= f.input :size, as: :select, label: 'Company Size', collection: company_sizes, include_blank: 'Select Size' %>
 <%= f.input :year_founded %>
-
+<%= f.association :skills, include_blank: false, as: :check_boxes %>
 <%= f.submit 'Submit' %>
 
 <% end %>
