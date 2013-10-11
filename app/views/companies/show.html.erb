@@ -48,3 +48,7 @@
   <%= @company.skills.map(&:name).join(", ") %>
 </p>
 
+<%= simple_form_for [@company, @rating] do |f| %> 
+  <%= f.input :value, label: "Rating" %>
+  <%= f.submit 'Submit' %>
+<% end %>

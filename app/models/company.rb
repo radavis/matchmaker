@@ -3,9 +3,11 @@ class Company < ActiveRecord::Base
   has_many :skill_tags
   has_many :skills, through: :skill_tags
 
-
   belongs_to :industry,
     inverse_of: :companies
+
+  has_many :ratings
+  has_many :users, through: :ratings
 
   validates_presence_of :name
 

@@ -24,10 +24,10 @@ class CompaniesController < ApplicationController
   end
 
   def show
+
+    @rating = Rating.new
     @company = Company.find(params[:id])
-    @skillable = @company
-    @skills = @skillable.skills
-    @skill = Skill.new
+
   end
 
   def index
