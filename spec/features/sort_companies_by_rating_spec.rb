@@ -24,14 +24,17 @@ feature 'sort companies by rating', %q{
 
       linkedin = FactoryGirl.create(:company, name: 'LinkedIn')
       FactoryGirl.create(:rating, company_id: linkedin.id, value: 3)
+
+      javaworld = FactoryGirl.create(:company, name: 'Javaworld')
       sign_in_as(user)
     end
 
     scenario 'visit the index page for companies' do
       visit companies_path
-      expect(page).to have_content("ul li:nth-child(1)", content: 'Fireball')
-      expect(page).to have_content("ul li:nth-child(2)", content: 'LinkedIn')
-      expect(page).to have_content("ul li:nth-child(3)", content: 'eBay')
+      page.should have_css("ul.companies li:nth-child(1)", text: 'Fireball')
+      page.should have_css("ul.companies li:nth-child(2)", text: 'LinkedIn')
+      page.should have_css("ul.companies li:nth-child(3)", text: 'eBay')
+      page.should have_css("ul.companies li:nth-child(4)", text: 'Javaworld')
     end
   end
 end
