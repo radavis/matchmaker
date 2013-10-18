@@ -25,4 +25,9 @@ class Company < ActiveRecord::Base
   validates_presence_of :size, in: COMPANY_SIZES
   validates_numericality_of :year_founded
 
+  def score
+    #ratings.inject(0) { |sum, rating| sum + rating.value }
+    ratings.sum('value')
+  end
+
 end

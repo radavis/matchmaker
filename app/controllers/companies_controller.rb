@@ -24,13 +24,12 @@ class CompaniesController < ApplicationController
   end
 
   def show
-
     @rating = Rating.new
     @company = Company.find(params[:id])
-
   end
 
   def index
+    @companies = Company.all.sort_by! { |c| c.score }.reverse
   end
 
   private
