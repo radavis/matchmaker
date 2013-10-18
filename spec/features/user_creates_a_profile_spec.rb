@@ -19,18 +19,20 @@ feature 'user creates a profile', %q{
     previous_count = Profile.count
     user = FactoryGirl.create(:user)
     sign_in_as(user)
+    visit root_path
     click_on "Create Profile"
+
     fill_in "First name", with: "Richard"
     fill_in "Last name", with: "Beastmaster"
     fill_in "City", with: "Boston"
-    fill_in "State", with: "MA"
+    select "Massachusetts", from: "State"
     fill_in "Linkedin", with: "http://www.linkedin.com/davisra"
     fill_in "Github", with: "http://www.github.com/radavis"
     fill_in "Twitter", with: "https://twitter.com/bcardarella"
     fill_in "Blog", with: "http://www.codecontainer.org"
     fill_in "Stackoverflow", with: "http://stackoverflow.com/null"
-    click_on "Willing to relocate"
-    click_on "Create Profile"
+    check "Willing to relocate"
+    click_on "Submit"
     expect(page).to have_content("Your profile has been created.")
     expect(Profile.count).to eql(previous_count + 1)
   end

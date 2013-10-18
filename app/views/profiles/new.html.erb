@@ -1,0 +1,16 @@
+<%= simple_form_for @profile do |f| %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :city %>
+  <%= f.input :state, as: :select, label: 'State', collection: states, include_blank: 'Select State' %>
+  <%= f.input :relocate, label: "Willing to relocate" %>
+
+  <%= f.input :linkedin %>
+  <%= f.input :github %>
+  <%= f.input :twitter %>
+  <%= f.input :blog %>
+  <%= f.input :stackoverflow %>
+  <%= f.submit 'Submit' %>
+
+<% end %>
