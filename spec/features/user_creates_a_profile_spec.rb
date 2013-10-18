@@ -19,7 +19,7 @@ feature 'user creates a profile', %q{
     previous_count = Profile.count
     user = FactoryGirl.create(:user)
     sign_in_as(user)
-    click_on "Edit Profile"
+    click_on "Create Profile"
     fill_in "First name", with: "Richard"
     fill_in "Last name", with: "Beastmaster"
     fill_in "City", with: "Boston"
