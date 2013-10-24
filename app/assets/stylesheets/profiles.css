@@ -1,0 +1,8 @@
+form label {
+  display: block;
+}
+
+input[type='checkbox'] + label,
+label[for='profile_state'] {
+  display: inline-block;
+}
