@@ -19,7 +19,7 @@ describe Company do
   it { should_not have_valid(:state).when(nil, '') }
 
   it { should have_valid(:description).when('A great place to work.') }
-  it { should_not have_valid(:description).when(nil, '', 'awesome') }
+  it { should_not have_valid(:description).when(nil, '') }
 
   it { should have_valid(:telecommute).when(true, false) }
   it { should_not have_valid(:telecommute).when(nil, '') }
