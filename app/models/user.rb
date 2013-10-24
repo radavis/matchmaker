@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :ratings
   has_many :companies, through: :ratings
+  has_one :profile
 end

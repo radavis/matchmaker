@@ -4,5 +4,6 @@ Matchmaker::Application.routes.draw do
   resources :companies do
     resources :ratings
   end
+  resources :profiles
   root to: "users#index"
 end
